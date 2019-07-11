@@ -1,0 +1,59 @@
+<table border=2 >
+    <tr class="table-success">
+        <th>Book Id</th>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Year of Publ.</th>
+        <th colspan="2">Action</th>
+    </tr>
+    <tr *ngFor="let em of bookAll;let i = index">
+        <td>{{em.id}}</td>
+        <td>{{em.title}}</td>
+        <td>{{em.author}}</td>
+        <td>{{em.year}}</td>
+        <td><input type="button" value="UPDATE" (click)="putBook(i)"/></td>
+        <td><input type="button" value="DELETE" (click)="delete(i)"/></td>
+        </tr>
+</table>
+<h3>Update Book</h3>
+<table border="2" >
+    <tr>
+        <td>
+          Id
+        </td>
+        <td>
+          <input type="text"  [(ngModel)]="uId"/> 
+        </td>
+    </tr>
+    
+    <tr>
+      <td>
+        Title
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="uTitle" />
+      </td>
+  </tr>
+  <tr>
+      <td>
+        Author
+      </td>
+      <td>
+        <input type="text" [(ngModel)]="uAuthor"/>
+      </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Year
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="uYear"/>
+    </td>
+</tr>
+  <tr>
+      <td colspan="2" align="center">
+          <input type="button" value="Update Book Record" (click)="updateBook()" />
+      </td>
+  </tr>
+</table>
